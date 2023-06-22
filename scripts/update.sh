@@ -8,7 +8,7 @@ fi
 
 # Get the version parameter from the command line argument
 VERSION="$1"
-XCODE_VERSION="14.3"
+XCODE_VERSION="14.3.1"
 
 # Download and unzip the realm-swift release
 curl -LO "https://github.com/realm/realm-swift/releases/download/v${VERSION}/realm-swift-${VERSION}.zip"
