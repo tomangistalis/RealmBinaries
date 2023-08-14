@@ -3,7 +3,7 @@
 
 import PackageDescription
 
-let realmVersion = "10.40.2"
+let realmVersion = "10.42.0"
 let baseURL = "https://github.com/tomangistalis/RealmBinaries/releases/download/\(realmVersion)"
 
 let package = Package(
@@ -27,12 +27,12 @@ let package = Package(
         .binaryTarget(
             name: "Realm",
             url: "\(baseURL)/Realm.xcframework.zip",
-            checksum: "1b76a73e6566b68328ab62fdff0d1207011ef8521a07756711710ee8fbac5b4d"
+            checksum: "8f8ca3831d81f7612ffcfbc241748047c79dd69dcf687e095db6e134db80b7cd"
         ),
         .binaryTarget(
             name: "RealmSwift",
             url: "\(baseURL)/RealmSwift.xcframework.zip",
-            checksum: "04a6d1b69a38edf8c0b5f0795327ac49619a33db9ea6d4d6e6a8aa19f8470bd4"
+            checksum: "31dd97e41c0d7b4fcae05084cce8b3e3f75b5a80f644518f16f559796ee388f8"
         )
     ]
 )
