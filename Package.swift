@@ -3,8 +3,35 @@
 
 import PackageDescription
 
-let realmVersion = "10.42.0"
-let baseURL = "https://github.com/tomangistalis/RealmBinaries/releases/download/\(realmVersion)"
+//https://github.com/realm/realm-swift/releases/download/v10.42.1/RealmSwift@15.0.spm.zip
+
+func buildTargets() -> [Target] {
+    let realmVersion = "v10.42.1"
+    let baseURL = "https://github.com/realm/realm-swift/releases/download/\(realmVersion)"
+
+    let realmChecksum = "5a166d03debda99f4378959a3cf39fc31c1e250a7aa7e9ec90b43450b99f5801"
+
+    #if swift(>=5.9)
+        let xcodeVersion = "15.0"
+        let realmSwiftChecksum = "65edd34a49cc766a715c5244e80262e82c7e2a0660fd275a9df98def29c12343"
+    #else
+        let xcodeVersion = "14.3.1"
+        let realmSwiftChecksum = "92b147025f6a29a335a553ae61c966063d9dee293c1dd4be490325c2b041c3a3"
+    #endif
+
+    return [
+        .binaryTarget(
+            name: "Realm",
+            url: "\(baseURL)/Realm.spm.zip",
+            checksum: realmChecksum
+        ),
+        .binaryTarget(
+            name: "RealmSwift",
+            url: "\(baseURL)/RealmSwift@\(xcodeVersion).spm.zip",
+            checksum: realmSwiftChecksum
+        )
+    ]
+}
 
 let package = Package(
     name: "RealmBinaries",
@@ -23,16 +50,5 @@ let package = Package(
             name: "RealmSwift",
             targets: ["RealmSwift"])
     ],
-    targets: [
-        .binaryTarget(
-            name: "Realm",
-            url: "\(baseURL)/Realm.xcframework.zip",
-            checksum: "8f8ca3831d81f7612ffcfbc241748047c79dd69dcf687e095db6e134db80b7cd"
-        ),
-        .binaryTarget(
-            name: "RealmSwift",
-            url: "\(baseURL)/RealmSwift.xcframework.zip",
-            checksum: "31dd97e41c0d7b4fcae05084cce8b3e3f75b5a80f644518f16f559796ee388f8"
-        )
-    ]
+    targets: buildTargets()
 )
