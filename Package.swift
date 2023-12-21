@@ -13,7 +13,7 @@ func buildTargets() -> [Target] {
 
     #if swift(>=5.9.2)
         let url = "https://github.com/tomangistalis/RealmBinaries/releases/download/\(realmVersion)/RealmSwift@15.1.spm.zip"
-        let realmSwiftChecksum = "cd3cdba03945f2dd775e7fcae759eeb1d67c1b4011f1485980cdb99366dd8756"
+        let realmSwiftChecksum = "36102975ff3af7a94a92bbafc9962e09ad904f61374e689d58ea115944cad84a"
     #elseif swift(>=5.9)
         let url = "\(baseURL)/RealmSwift@15.0.spm.zip"
         let realmSwiftChecksum = "c548dd125df800b5888129f93119360cd3bb3b74ebd740bc21a170f411debee1"
