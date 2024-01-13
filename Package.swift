@@ -6,21 +6,13 @@ import PackageDescription
 //https://github.com/realm/realm-swift/releases/download/v10.42.1/RealmSwift@15.0.spm.zip
 
 func buildTargets() -> [Target] {
-    let realmVersion = "v10.46.0"
-    let baseURL = "https://github.com/tomangistalis/RealmBinaries/releases/download/\(realmVersion)"
+    let realmVersion = "v10.45.3"
+    let baseURL = "https://github.com/realm/realm-swift/releases/download/\(realmVersion)"
 
-    let realmChecksum = "6ec8af0beffd9624963b4e00bae858cc487287aea12cddb92963fa4f53b0a310"
+    let realmChecksum = "db7ed7e71a7d2b17ebb504cf05de1e31b5d7c9a4eee9e908fc88080564f56c25"
 
-    #if swift(>=5.9.2)
-        let url = "https://github.com/tomangistalis/RealmBinaries/releases/download/\(realmVersion)/RealmSwift@15.1.spm.zip"
-        let realmSwiftChecksum = "ca6bd9d96890385298f92b121b4b2d3fcd0c8a55533d71e761053ef9719fe7bf"
-    #elseif swift(>=5.9)
-        let url = "\(baseURL)/RealmSwift@15.0.spm.zip"
-        let realmSwiftChecksum = "c548dd125df800b5888129f93119360cd3bb3b74ebd740bc21a170f411debee1"
-    #else
-        let url = "\(baseURL)/RealmSwift@14.3.1.spm.zip"
-        let realmSwiftChecksum = "288a311f83ec1d1dc051084f1aeee51ecb165407ef95f5081c9b20df0b952671"
-    #endif
+    let realmSwift = "https://github.com/realm/realm-swift/releases/download/\(realmVersion)/RealmSwift@15.2.spm.zip"
+    let realmSwiftChecksum = "4baa92fbe999a0240b11bab3246fe16112faa4e42cfe2d9583258ec364ec1340"
 
     return [
         .binaryTarget(
@@ -30,7 +22,7 @@ func buildTargets() -> [Target] {
         ),
         .binaryTarget(
             name: "RealmSwift",
-            url: url,
+            url: realmSwift,
             checksum: realmSwiftChecksum
         )
     ]
