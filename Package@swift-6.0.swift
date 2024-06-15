@@ -1,4 +1,4 @@
-// swift-tools-version:5.10
+// swift-tools-version:6.0
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
@@ -8,11 +8,11 @@ import PackageDescription
 func buildTargets() -> [Target] {
     let realmVersion = "v10.51.0"
 
-    let realm = "https://github.com/realm/realm-swift/releases/download/\(realmVersion)/Realm.spm.zip"
-    let realmChecksum = "52c24b44863f83433592590035ba7cf55478cb076b659a68218e8d98648ef115"
+    let realm = "https://github.com/tomangistalis/RealmBinaries/releases/download/\(realmVersion)/Realm@16.0-beta1.spm.zip"
+    let realmChecksum = "0ee9eb86ee5d580fea6c9498b978185611b1f0a7a4d1ed25d3b37f20101f9d20"
 
-    let realmSwift = "https://github.com/realm/realm-swift/releases/download/\(realmVersion)/RealmSwift@15.4.spm.zip"
-    let realmSwiftChecksum = "b39f8b7ed1d432f3bc5c65649997d00676062a9e73e3fcda07d5146744c79736"
+    let realmSwift = "https://github.com/tomangistalis/RealmBinaries/releases/download/\(realmVersion)/RealmSwift@16.0-beta1.spm.zip"
+    let realmSwiftChecksum = "f73c67ab8b6a99d87ea048af9dcb38877e6069928fe4f41bec139e2e9e021015"
 
     return [
         .binaryTarget(
