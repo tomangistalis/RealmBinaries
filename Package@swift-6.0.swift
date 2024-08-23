@@ -6,25 +6,35 @@ import PackageDescription
 //https://github.com/realm/realm-swift/releases/download/v10.42.1/RealmSwift@15.0.spm.zip
 
 func buildTargets() -> [Target] {
-    let realmVersion = "v10.51.0"
+    let realmVersion = "v10.53.0"
 
-    let realm = "https://github.com/tomangistalis/RealmBinaries/releases/download/\(realmVersion)/Realm@16.0-beta1.spm.zip"
-    let realmChecksum = "0ee9eb86ee5d580fea6c9498b978185611b1f0a7a4d1ed25d3b37f20101f9d20"
+    let realm = "https://github.com/tomangistalis/RealmBinaries/releases/download/\(realmVersion)/Realm@16.0-beta6.spm.zip"
+    let realmChecksum = "f5e3a0a5af2596cbc4b65f0e0c20b94d528051058e9543d43aa0c4d1350a277d"
 
-    let realmSwift = "https://github.com/tomangistalis/RealmBinaries/releases/download/\(realmVersion)/RealmSwift@16.0-beta1.spm.zip"
-    let realmSwiftChecksum = "f73c67ab8b6a99d87ea048af9dcb38877e6069928fe4f41bec139e2e9e021015"
+    let realmSwift = "https://github.com/tomangistalis/RealmBinaries/releases/download/\(realmVersion)/RealmSwift@16.0-beta6.spm.zip"
+    let realmSwiftChecksum = "5aefcf1a029a938b769377edf0de41b714f7b1e4fbf87e65cceffd1a8e8bab26"
 
     return [
-        .binaryTarget(
-            name: "Realm",
-            url: realm,
-            checksum: realmChecksum
-        ),
-        .binaryTarget(
-            name: "RealmSwift",
-            url: realmSwift,
-            checksum: realmSwiftChecksum
-        )
+        // Remote
+       .binaryTarget(
+           name: "Realm",
+           url: realm,
+           checksum: realmChecksum
+       ),
+       .binaryTarget(
+           name: "RealmSwift",
+           url: realmSwift,
+           checksum: realmSwiftChecksum
+       ),
+        // Local
+        // .binaryTarget(
+        //     name: "Realm",
+        //     path: "Realm@16.0-beta6.spm.zip"
+        // ),
+        // .binaryTarget(
+        //     name: "RealmSwift",
+        //     path: "RealmSwift@16.0-beta6.spm.zip"
+        // )
     ]
 }
 
