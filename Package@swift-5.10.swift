@@ -11,8 +11,12 @@ func buildTargets() -> [Target] {
     let realm = "https://github.com/realm/realm-swift/releases/download/\(realmVersion)/Realm.spm.zip"
     let realmChecksum = "632a17f1ca302b777572a20c158f3c52ad76e343cd228887ec7a6a6fba18e9cc"
 
-    let realmSwift = "https://github.com/realm/realm-swift/releases/download/\(realmVersion)/RealmSwift@15.4.spm.zip"
-    let realmSwiftChecksum = "0897ce8ceb4f983d6d07ab9b00eb59ab2bc855e2d54018c919d1e92db304f3f1"
+    // let realmSwift = "https://github.com/realm/realm-swift/releases/download/\(realmVersion)/RealmSwift@15.4.spm.zip"
+    // let realmSwiftChecksum = "0897ce8ceb4f983d6d07ab9b00eb59ab2bc855e2d54018c919d1e92db304f3f1"
+
+    // Use Xcode 15.3 due to a Firebase bug
+    let realmSwift = "https://github.com/realm/realm-swift/releases/download/\(realmVersion)/RealmSwift@15.3.spm.zip"
+    let realmSwiftChecksum = "df36bb69810ae58b54cbd1e704b125238093d4dc5440991c9bb31cad8a5cfedd"
 
     return [
         .binaryTarget(
