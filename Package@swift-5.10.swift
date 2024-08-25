@@ -9,10 +9,10 @@ func buildTargets() -> [Target] {
     let realmVersion = "v10.53.0"
 
     let realm = "https://github.com/realm/realm-swift/releases/download/\(realmVersion)/Realm.spm.zip"
-    let realmChecksum = "52c24b44863f83433592590035ba7cf55478cb076b659a68218e8d98648ef115"
+    let realmChecksum = "632a17f1ca302b777572a20c158f3c52ad76e343cd228887ec7a6a6fba18e9cc"
 
     let realmSwift = "https://github.com/realm/realm-swift/releases/download/\(realmVersion)/RealmSwift@15.4.spm.zip"
-    let realmSwiftChecksum = "b39f8b7ed1d432f3bc5c65649997d00676062a9e73e3fcda07d5146744c79736"
+    let realmSwiftChecksum = "0897ce8ceb4f983d6d07ab9b00eb59ab2bc855e2d54018c919d1e92db304f3f1"
 
     return [
         .binaryTarget(
