@@ -6,13 +6,23 @@ import PackageDescription
 //https://github.com/realm/realm-swift/releases/download/v10.42.1/RealmSwift@15.0.spm.zip
 
 func buildTargets() -> [Target] {
-    let realmVersion = "v20.0.0"
+    let realmVersion = "v10.54.1"
 
-    let realm = "https://github.com/tomangistalis/RealmBinaries/releases/download/\(realmVersion)/Realm@16.0.spm.zip"
-    let realmChecksum = "294b34c0e183750ebb3496cc53f6710a5ef3a2da7b2fe6b229adf5883bacb237"
+#if swift(>=6.0.2)
+    let realm = "https://github.com/realm/realm-swift/releases/download/\(realmVersion)/Realm.spm.zip"
+    let realmChecksum = "5be6d10b5829dd7f20bd4e4cf8dab29f3985ca815de3105c9e1866aa82eda431"
 
-    let realmSwift = "https://github.com/tomangistalis/RealmBinaries/releases/download/\(realmVersion)/RealmSwift@16.0.spm.zip"
-    let realmSwiftChecksum = "091f62f525521ef04c8551affcbc14c451b1cdc2e3acf6d2707c1280303ce739"
+    // https://github.com/realm/realm-swift/releases/download/v10.54.1/RealmSwift@16.1.spm.zip
+    // https://github.com/tomangistalis/RealmBinaries/releases/download/\(realmVersion)/RealmSwift@16.1.spm.zip
+    let realmSwift = "https://github.com/realm/realm-swift/releases/download/\(realmVersion)/RealmSwift@16.1.spm.zip"
+    let realmSwiftChecksum = "e9089f8080f6fd82f74cc155987921e1ce8f7f2b79622482f7a3533e4686912d"
+#else
+    let realm = "https://github.com/realm/realm-swift/releases/download/\(realmVersion)/Realm.spm.zip"
+    let realmChecksum = "5be6d10b5829dd7f20bd4e4cf8dab29f3985ca815de3105c9e1866aa82eda431"
+
+    let realmSwift = "https://github.com/realm/realm-swift/releases/download/\(realmVersion)/RealmSwift@16.0.spm.zip"
+    let realmSwiftChecksum = "e1b61a224535c7220398ff6a043cdb831d604f29568303b248a8b514f9187981"
+#endif
 
     return [
         // Remote
@@ -29,11 +39,11 @@ func buildTargets() -> [Target] {
         // Local
         // .binaryTarget(
         //     name: "Realm",
-        //     path: "Realm@16.0.spm.zip"
+        //     path: "Realm@16.1.spm.zip"
         // ),
         // .binaryTarget(
         //     name: "RealmSwift",
-        //     path: "RealmSwift@16.0.spm.zip"
+        //     path: "RealmSwift@16.1.spm.zip"
         // )
     ]
 }
