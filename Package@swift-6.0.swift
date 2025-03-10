@@ -6,9 +6,17 @@ import PackageDescription
 //https://github.com/realm/realm-swift/releases/download/v10.42.1/RealmSwift@15.0.spm.zip
 
 func buildTargets() -> [Target] {
-    let realmVersion = "v10.54.1"
+    let realmVersion = "v10.54.3"
 
-#if swift(>=6.0.3)
+#if swift(>=6.1)
+    let realm = "https://github.com/realm/realm-swift/releases/download/\(realmVersion)/Realm.spm.zip"
+    let realmChecksum = "f2d3ddc1b4f19f8b81dbd1ed40e0b19aeab3c5925b2dab06c749adb5c003e022"
+
+    // https://github.com/realm/realm-swift/releases/download/v10.54.1/RealmSwift@16.1.spm.zip
+    // https://github.com/tomangistalis/RealmBinaries/releases/download/\(realmVersion)/RealmSwift@16.1.spm.zip
+    let realmSwift = "https://github.com/tomangistalis/RealmBinaries/releases/download/\(realmVersion)/RealmSwift@16.3-Beta.2.spm.zip"
+    let realmSwiftChecksum = "8191fb30d76b76335d81663c528f8d40d2f5429f3d4ee262b9dcb842dafc80ba"
+#elseif swift(>=6.0.3)
     let realm = "https://github.com/realm/realm-swift/releases/download/\(realmVersion)/Realm.spm.zip"
     let realmChecksum = "5be6d10b5829dd7f20bd4e4cf8dab29f3985ca815de3105c9e1866aa82eda431"
 
