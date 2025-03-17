@@ -14,8 +14,8 @@ func buildTargets() -> [Target] {
 
     // https://github.com/realm/realm-swift/releases/download/v10.54.1/RealmSwift@16.1.spm.zip
     // https://github.com/tomangistalis/RealmBinaries/releases/download/\(realmVersion)/RealmSwift@16.1.spm.zip
-    let realmSwift = "https://github.com/tomangistalis/RealmBinaries/releases/download/\(realmVersion)/RealmSwift@16.3-Beta.2.spm.zip"
-    let realmSwiftChecksum = "8191fb30d76b76335d81663c528f8d40d2f5429f3d4ee262b9dcb842dafc80ba"
+    let realmSwift = "https://github.com/tomangistalis/RealmBinaries/releases/download/\(realmVersion)/RealmSwift@16.3-Beta.1.spm.zip"
+    let realmSwiftChecksum = "4dbe5fbd196f1db39d8406ebf3b3c18377490556aadbd9e824c61de4eb0a828c"
 #elseif swift(>=6.0.3)
     let realm = "https://github.com/realm/realm-swift/releases/download/\(realmVersion)/Realm.spm.zip"
     let realmChecksum = "5be6d10b5829dd7f20bd4e4cf8dab29f3985ca815de3105c9e1866aa82eda431"
